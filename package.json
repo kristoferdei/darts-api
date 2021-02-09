@@ -3,20 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.4",
     "@testing-library/user-event": "^12.6.3",
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
+    "navi": "0.14.0",
+    "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-navi": "^0.14.4",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "tailwindcss": "^1.9.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:tailwind": "tailwindcss build src/index.css -o src/tailwind.output.css",
+    "prestart": "npm run build:tailwind",
+    "prebuild": "npm run build:tailwind"
   },
+  "proxy": "https://insimu-darts-api.azurewebsites.net/",
   "eslintConfig": {
     "extends": [
       "react-app",

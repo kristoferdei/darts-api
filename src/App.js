@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { mount, route } from "navi";
+import Matches from "./pages/Matches"
+import Landing from "./pages/Landing"
+import Players from "./pages/Players";
+import Ones from "./pages/Ones";
+import PostMatch from "./pages/PostMatch";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = mount({
+    '/': route({
+        title: "Home",
+        view: <Landing />
+    }),
+    '/matches': route({
+        title: 'Matches',
+        view: <Matches />
+    }),
+    '/players': route({
+        title: 'Players',
+        view: <Players />
+    }),
+    '/ones': route({
+        title: 'Ones',
+        view: <Ones />
+    }),
+    '/post': route({
+        title: 'Post',
+        view: <PostMatch />
+    }),
+})
 
 export default App;
